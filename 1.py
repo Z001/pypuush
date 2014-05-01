@@ -10,13 +10,13 @@ char_set1 = string.ascii_lowercase
 char_set2 = string.ascii_uppercase
 char_set3 = string.ascii_uppercase + string.digits
 
-while counter1 <= download:
-	a = ''.join(random.sample(char_set*1, 1)) + ''.join(random.sample(char_set1*1, 1)) + ''.join(random.sample(char_set2*1, 1)) + ''.join(random.sample(char_set1*1, 1)) + ''.join(random.sample(char_set3*1, 1))
-	b = 'http://puu.sh/' + a + '.png'
-	counter1 += 1
-	z = urlopen('http://puu.sh/' + a + '.png').read().__sizeof__()
-	if z > 100:
-		urllib.urlretrieve(b, a + '.png')
-		print b , 'downloaded' , z, "bytes"
-
-	
+for i in range(download):
+	rand = ''.join(random.sample(char_set*1, 1)) + ''.join(random.sample(char_set1*1, 1)) + ''.join(random.sample(char_set2*1, 1)) + ''.join(random.sample(char_set1*1, 1)) + ''.join(random.sample(char_set3*1, 1)) + '.png'
+	fname = 'http://puu.sh/' + rand 
+	content = urlopen('http://puu.sh/' + rand).read()
+	length = len(content)
+	if length > 100:
+		fo = open("{0}".format(rand), "wb")
+		fo.write(content);
+		fo.close()
+		print fname , 'downloaded' , length, "bytes"
