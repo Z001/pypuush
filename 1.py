@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import random
 import string
 import urllib
@@ -25,6 +26,7 @@ while counter1 < download:
 		fo.write(content);
 		fo.close()
 		counter1 += 1
+<<<<<<< HEAD
 
 		print st, " |", fname, " |", rcode, "Ok |", 'Downloaded:' , length, "bytes."
 	elif rcode == 403:
@@ -33,3 +35,8 @@ while counter1 < download:
 		print st, " |", fname, " |", rcode, "Not found |"
 	elif rcode == 300:
 		print "Otsosi u traktorista"
+=======
+		print fname , rcode, 'downloaded' , length, "bytes"
+	elif rcode == 300:
+		print "Отсоси у программиста"
+>>>>>>> FETCH_HEAD
