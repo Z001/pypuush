@@ -33,4 +33,4 @@ while counter1 < download:
 	elif rcode == 404:
 		print st, " |", fname, " |", rcode, "Not found |"
 	elif rcode == 300:
-		print "Otsosi u traktorista"
+		print "Otsosi u programmista"
