@@ -13,6 +13,7 @@ char_set2 = string.ascii_uppercase
 char_set3 = string.ascii_uppercase + string.digits
 
 while counter1 < download:
+	urllib.URLopener.version = 'Mozilla/5.0 (compatible; Googlebot-Image/1.01; +http://www.google.com/bot.html)'
 	rand = ''.join(random.sample(char_set*1, 1)) + ''.join(random.sample(char_set1*1, 1)) + ''.join(random.sample(char_set2*1, 1)) + ''.join(random.sample(char_set1*1, 1)) + ''.join(random.sample(char_set3*1, 1)) + '.png'
 	fname = 'http://puu.sh/' + rand
 	rcode = urlopen('http://puu.sh/' + rand).getcode()
