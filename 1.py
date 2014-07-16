@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import random
 import string
 import urllib
@@ -25,3 +26,5 @@ while counter1 <= download:
 		fo.close()
 		counter1 += 1
 		print fname , rcode, 'downloaded' , length, "bytes"
+	elif rcode == 300:
+		print "Отсоси у программиста"
