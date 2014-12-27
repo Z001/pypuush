@@ -1,3 +1,7 @@
+############################
+# puush.me grabber by Z001 #
+############################
+
 import random
 import string
 import urllib
@@ -22,15 +26,22 @@ while counter1 < download:
 	if rcode == 200:
 		content = urlopen('http://puu.sh/' + rand).read()
 		length = len(content)
-		fo = open("{0}".format(rand), "wb")
-		fo.write(content);
-		fo.close()
-		counter1 += 1
+		if length > 42:
+			fo = open("{0}".format(rand), "wb")
+			fo.write(content);
+			fo.close()
+			counter1 += 1
+			print st, " |", fname, " |", rcode, "Ok |", 'Downloaded:' , length, "bytes."
+		else:
+			print st, " |", fname, " |", rcode, "Not found |"
 
-		print st, " |", fname, " |", rcode, "Ok |", 'Downloaded:' , length, "bytes."
+	
 	elif rcode == 403:
 		print st, " |", fname, " |", rcode, "Forbidden |"
+	
 	elif rcode == 404:
 		print st, " |", fname, " |", rcode, "Not found |"
+	
 	elif rcode == 300:
 		print "Otsosi u programmista"
+
